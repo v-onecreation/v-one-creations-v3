@@ -1,0 +1,37 @@
+:root{--ink:#07060c;--paper:#efe9df;--coral:#ff4d6d;--mut:#a39fae;--d:'Syne',system-ui,sans-serif;--b:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ink);color:var(--paper);font:400 1.05rem/1.6 var(--b);overflow-x:hidden}
+a{color:inherit}:focus-visible{outline:2px solid var(--coral);outline-offset:4px}
+h1,h2,.brand{font-family:var(--d);font-weight:800;letter-spacing:-.035em;line-height:.95}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main{position:relative;z-index:2}
+.pg{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:linear-gradient(90deg,#3a2bff,var(--coral));transform:scaleX(0);transform-origin:0 50%}
+.nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;padding:1.2rem 5vw;mix-blend-mode:difference}
+.nav nav{display:flex;gap:2rem}.nav a{text-decoration:none}.brand{font-size:1.3rem}
+.dots{position:fixed;right:2vw;top:50%;transform:translateY(-50%);z-index:40;display:grid;gap:14px}
+.dots a{width:9px;height:9px;border-radius:50%;border:1px solid var(--paper);transition:.3s}.dots a.on{background:var(--coral);border-color:var(--coral);transform:scale(1.5)}
+.btn{display:inline-block;align-self:flex-start;padding:1.2rem 2.2rem;border-radius:99px;background:var(--paper);color:var(--ink);font:800 clamp(1rem,3vw,2rem)/1 var(--d);text-decoration:none;transition:.3s}.btn:hover{background:var(--coral);color:#fff}
+.hero{min-height:100vh;padding:0 5vw;display:flex;flex-direction:column;justify-content:center;gap:1.8rem}
+.hero h1{font-size:clamp(2.6rem,8.4vw,8rem)}.ln{display:block;overflow:hidden;padding-bottom:.08em}.ln i{display:block;font-style:normal}
+.lede{max-width:34ch;color:var(--mut)}.cue{color:var(--coral);font-weight:600}
+.cue::after{content:"";display:block;width:2px;height:54px;margin-top:.8rem;background:linear-gradient(var(--coral),transparent);animation:cu 1.8s ease-in-out infinite;transform-origin:0 0}
+@keyframes cu{0%{transform:scaleY(0)}60%,100%{transform:scaleY(1);opacity:0}}
+.chap{min-height:170vh;padding:0 7vw;display:flex}.chap.r{justify-content:flex-end}
+.t{position:sticky;top:20vh;align-self:flex-start;width:min(46%,560px);height:max-content}
+.tag{color:var(--coral);font-weight:600}.t h2{font-size:clamp(2.4rem,5.4vw,5rem);margin:.8rem 0 1rem}.t p{max-width:40ch;color:var(--mut)}
+.card{position:relative;aspect-ratio:4/3;width:min(420px,100%);margin-top:1.8rem;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 80px rgba(0,0,0,.6);transform-style:preserve-3d}
+.art{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 25% 20%,var(--b),transparent 62%),linear-gradient(140deg,var(--a),#09070f)}
+.art svg.mk{width:84%;max-height:88%;filter:drop-shadow(0 24px 40px rgba(0,0,0,.55));animation:fl 6s ease-in-out infinite}
+.mk text{font-family:var(--d);font-weight:800}.mk .fa{fill:var(--a)}.mk .fb{fill:var(--b)}.mk .st{stop-color:var(--a)}.mk .rg{stroke:var(--b)}
+.mk .sc{animation:sc 7s ease-in-out infinite alternate}.mk .rg{animation:rg 3.2s ease-in-out infinite alternate}
+.mk .ph2{animation:ph 5s linear infinite}.mk .ld{transform-origin:22px 0;animation:pl 6s linear infinite}
+.mk .sun{animation:sn 6s ease-in-out infinite alternate}.mk .rec{animation:rc 1s steps(2) infinite}.mk .fl{animation:fl 4s ease-in-out infinite}
+@keyframes sc{to{transform:translateY(-92px)}}@keyframes rg{from{stroke-dashoffset:188}to{stroke-dashoffset:52}}
+@keyframes ph{to{transform:translateX(250px)}}@keyframes sn{to{transform:translateY(-22px)}}@keyframes rc{50%{opacity:0}}
+@keyframes fl{50%{transform:translateY(-7px)}}@keyframes pl{from{transform:scaleX(0)}}
+.contact{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:2.5rem;padding:0 5vw 6vh}
+.contact h2{font-size:clamp(3rem,10.5vw,9.5rem)}.contact ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:1rem 2.5rem}
+.contact li a{text-decoration:none;background:linear-gradient(var(--coral),var(--coral)) 0 100%/0 2px no-repeat;transition:background-size .4s;padding-bottom:3px}.contact li a:hover{background-size:100% 2px}
+small{color:var(--mut)}
+@media(max-width:780px){.t{width:100%;padding:1.2rem;border-radius:16px;background:rgba(7,6,12,.5);backdrop-filter:blur(8px)}.dots{display:none}.nav nav{gap:1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
